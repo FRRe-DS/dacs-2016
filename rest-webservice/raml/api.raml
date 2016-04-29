@@ -1,0 +1,17 @@
+#%RAML 0.8
+title: Please type API title here
+version: v1
+baseUri: http://api.frre.utn.edu.ar
+protocols: [ HTTP ]
+/validateCUIT/{cuit}: 
+  description: |
+    Ejemplo de RESTful Web Service
+     @author Dr. Jorge Eduardo Villaverde
+  uriParameters: 
+    cuit: 
+      description: Número de CUIT a validar.
+  get: 
+    description: Determina si el CUIT es válido o no.
+    responses: 
+      200: 
+        description: OK si el CUIT es válido.
