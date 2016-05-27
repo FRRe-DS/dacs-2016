@@ -54,7 +54,11 @@ public abstract class GenericDaoImpl<T extends BaseEntity>
 
 	@Override
 	public void remove(T entity) {
-		em.remove(entity);
+		if(!entity.isNew()) {
+			T newT = em.find(getEntityClazz(), entity.getId());
+			em.refresh(newT);
+			em.remove(newT);
+		}
 	}
 
 	@Override
@@ -66,6 +70,7 @@ public abstract class GenericDaoImpl<T extends BaseEntity>
 	public List<T> findAll() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<T> cq = cb.createQuery(getEntityClazz());
+		cq.from(getEntityClazz());
 		TypedQuery<T> typedQuery = em.createQuery(cq);
 		return typedQuery.getResultList();
 	}
