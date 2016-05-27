@@ -4,10 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ar.edu.utn.frre.dacs.dacs2016</groupId>
 	<artifactId>sepa</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<name>Sistema Electrónico de Publicidad de Precios Argentinos (SEPA)</name>
 	<packaging>pom</packaging>
 	<url>http://www.frre.utn.edu.ar</url>
+
+	<properties>
+		<javaee.version>6.0</javaee.version>
+	</properties>
 
 	<parent>
 		<groupId>ar.edu.utn.frre.dacs</groupId>
@@ -20,4 +23,14 @@
 		<module>sepa-web</module>
 		<module>sepa-ear</module>
 	</modules>
+	
+	<dependencies>
+		<!-- Java EE API -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
 </project>

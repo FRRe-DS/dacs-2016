@@ -6,15 +6,21 @@
 	<persistence-unit name="sepa-pu" transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/SepaDS</jta-data-source>
+		<class>ar.edu.utn.frre.dacs.dacs2016.sepa.model.BaseEntity</class>
+		<class>ar.edu.utn.frre.dacs.dacs2016.sepa.model.Comercio</class>
+		<class>ar.edu.utn.frre.dacs.dacs2016.sepa.model.Localidad</class>
+		<class>ar.edu.utn.frre.dacs.dacs2016.sepa.model.Producto</class>
+		<class>ar.edu.utn.frre.dacs.dacs2016.sepa.model.Provincia</class>
+		<class>ar.edu.utn.frre.dacs.dacs2016.sepa.model.PuntoVenta</class>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
 		<properties>
          <!-- Properties for Hibernate -->
-			<property name="hibernate.hbm2ddl.auto" value="validate" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
             <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
             <property name="hibernate.connection.charSet" value="UTF-8"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <!-- Uncomment the following two properties for JBoss only -->
             <property name="hibernate.validator.apply_to_ddl" value="false"/>
             <property name="hibernate.validator.autoregister_listeners" value="false"/>
