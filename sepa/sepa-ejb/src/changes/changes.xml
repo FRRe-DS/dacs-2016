@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/changes/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+<properties>
+   <title>Registro de cambios para el Sistema Electrónico de Publicidad de Precios Argentinos</title>
+</properties>
+<body>
+    <release version="1.0.0" description="Version inicial" date="27/05/2016">
+        <action dev="d97villaje" issue="01" type="add">Funcionalidades basicas de SEPA</action>
+    </release>
+</body>
+</document>
