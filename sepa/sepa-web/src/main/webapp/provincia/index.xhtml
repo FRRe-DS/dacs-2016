@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+	<h2>#{messages.provincias}</h2>
+	<h:form>
+		<h:dataTable id="listaProvincias" value="#{provinciaBean.provincias}" var="entity">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{messages.provinciaId}" />
+				</f:facet>
+				<h:outputText value="#{entity.id}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{messages.provinciaNombre}" />
+				</f:facet>
+				<h:outputText value="#{entity.nombre}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+				</f:facet>
+				<h:link outcome="/provincia/edit.xhtml" value="#{messages.edit}">	
+					<f:param name="id" value="#{entity.id}" />
+				</h:link>
+				<h:commandLink action="#{provinciaBean.remove(entity)}" value=" #{messages.remove}">
+					<f:ajax render="@all" />
+				</h:commandLink>
+			</h:column>
+		</h:dataTable>
+		
+		<h:link outcome="/provincia/create.xhtml" value="#{messages.provinciaCrear}"/>
+	</h:form>
+	</ui:define>
+</ui:composition>

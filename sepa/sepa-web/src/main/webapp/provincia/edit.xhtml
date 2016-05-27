@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<f:metadata>
+        <f:viewParam name="id" value="#{provinciaBean.id}" />
+        <f:event type="preRenderView" listener="#{provinciaBean.init}" />
+    </f:metadata>
+	<h2>#{messages.provinciaEdit}</h2>
+	<h:form>
+		<h:outputLabel value="#{messages.provinciaId}: " for="id" />
+		<h:outputText value="#{provinciaBean.entity.id}" id="id" />
+		<br />
+	
+		<h:outputLabel value="#{messages.provinciaNombre}: " for="nombre" />
+		<h:inputText value="#{provinciaBean.entity.nombre}" id="nombre" />
+		<br />
+		<h:commandButton action="#{provinciaBean.edit}" 
+			value="#{messages.provinciaEdit}" />
+	</h:form>
+
+</ui:composition>
